@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Layer 0 Item 1: Updated Title, Meta Description & Open Graph Tags -->
+  <title>Twin Cities Maker – Inclusive Minneapolis Makerspace &amp; Shared Workshop</title>
+  <meta name="description" content="Twin Cities Maker (TC Maker) is a non-profit, volunteer-driven community makerspace in Minneapolis (Seward) offering 24/7 shared studios and free Wednesday 7–9 PM Open House tours.">
+  <meta name="robots" content="max-image-preview:large">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Twin Cities Maker – Minneapolis Community Makerspace">
+  <meta property="og:description" content="Twin Cities Maker (TC Maker) is a welcoming, 24/7 shared workshop in Seward, Minneapolis for artists, crafters, engineers, and makers. Visit our Wednesday 7–9 PM Open House.">
+  <meta property="og:url" content="https://tcmaker.org/">
+  <meta property="og:site_name" content="Twin Cities Maker">
+  <meta property="og:image" content="https://tcmaker.org/wp-content/uploads/community-garden-1200w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="912">
+  <meta property="og:image:alt" content="Twin Cities Maker members smiling outdoors while building wooden raised beds for a community garden project.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module">
+    if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
+      import("https://unpkg.com/@oddbird/popover-polyfill@latest/dist/popover.min.js");
+    }
+    const navMenu = document.getElementById("lodestar-nav-menu");
+    const mq = window.matchMedia("(max-width: 48rem)");
+    const syncMenuPopover = () => {
+      if (!navMenu) return;
+      if (mq.matches) navMenu.setAttribute("popover", "auto");
+      else navMenu.removeAttribute("popover");
+    };
+    syncMenuPopover();
+    mq.addEventListener("change", syncMenuPopover);
+  </script>
+</head>
+<body class="home">
+  <a class="skip-link visually-hidden" href="#main-heading">Skip to content</a>
+
+  <!-- Existing Lodestar Header Structure -->
+  <header id="masthead" class="site-header">
+    <div class="header-top">
+      <div class="wrap nav-wrap">
+        <nav class="main-navigation" aria-label="Primary">
+          <button
+            class="menu-toggle"
+            type="button"
+            popovertarget="lodestar-nav-menu"
+            popovertargetaction="toggle"
+            aria-controls="lodestar-nav-menu"
+          >
+            Menu
+          </button>
+          <ul id="lodestar-nav-menu" class="nav-menu">
+            <li><a href="https://tcmaker.org/" aria-current="page">Home</a></li>
+            <li><a href="https://tcmaker.org/help-us-buy-a-building/">Help us buy a building!</a></li>
+            <li><a href="https://tcmaker.org/about/">About</a></li>
+            <li><a href="https://tcmaker.org/workshop/">Our Workshop</a></li>
+            <li><a href="https://tcmaker.org/membership/">Become a Member</a></li>
+            <li><a href="https://tcmaker.org/classes/">Classes</a></li>
+            <li><a href="https://tcmaker.org/calendar/">Calendar</a></li>
+            <li><a href="https://tcmaker.org/donating/">Donate</a></li>
+            <li><a href="https://tcmaker.org/contact/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Layer 0 Item 1: Replaced empty dusty shop hero (cropped-IMG_5588-downsized.jpg) with community garden project.jpg -->
+    <div class="custom-header">
+      <picture class="custom-header-bg">
+        <source
+          type="image/webp"
+          srcset="../sample-home/assets/community-garden-640w.webp 640w, ../sample-home/assets/community-garden-1200w.webp 1200w"
+          sizes="100vw"
+        >
+        <img
+          src="../sample-home/assets/community-garden-1200w.jpg"
+          alt="Twin Cities Maker members smiling together outdoors in daylight while building raised cedar community garden beds."
+          width="1200"
+          height="912"
+          fetchpriority="high"
+          loading="eager"
+        >
+      </picture>
+      <div class="custom-header-scrim" aria-hidden="true"></div>
+      <div class="site-branding">
+        <div class="wrap branding-inner">
+          <a class="site-logo-link" href="https://tcmaker.org/">
+            <img src="../sample-home/assets/tcm-logomark.png" alt="" width="56" height="56">
+            <span class="brand-name">Twin Cities Maker</span>
+          </a>
+          <p class="site-description">Find Your Creativity</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Existing Lodestar Content Structure -->
+  <div id="content" class="site-content">
+    <main id="main" class="site-main">
+      <!-- Intro Cover Band (Existing copy, clean teal-slate wash replacing IMG_5588-green-1.jpg) -->
+      <section class="intro-cover">
+        <div class="wrap intro-inner">
+          <!-- Layer 0 Item 1: Added a single semantic <h1> to the homepage -->
+          <h1 id="main-heading" tabindex="-1" class="hero-seo-h1">
+            Twin Cities Maker: A Welcoming Minneapolis Makerspace for Makers of All Kinds
+          </h1>
+          <p class="intro-lead">
+            <strong>
+              Twin Cities Maker is a non-profit, volunteer-driven community of artists, engineers, and makers. Together, we operate a shared community workshop where you can build nearly anything you can imagine.
+            </strong>
+          </p>
+          <p class="intro-cta-wrap">
+            <a class="lodestar-button" href="https://tcmaker.org/about/">Learn More About TC Maker</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Existing 2-Column Block: Replaced clamped-fingerboard-1.jpeg with TCM Lounge 4.JPG -->
+      <section class="panel-group">
+        <div class="wrap">
+          <div class="lodestar-columns">
+            <div class="lodestar-col-media">
+              <figure class="wp-block-image">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="../sample-home/assets/tcm-lounge-640w.webp 640w, ../sample-home/assets/tcm-lounge-1200w.webp 1200w"
+                    sizes="(max-width: 780px) 100vw, 48vw"
+                  >
+                  <img
+                    src="../sample-home/assets/tcm-lounge-1200w.jpg"
+                    alt="Sunlit Twin Cities Maker lounge with a warm yellow wall, rainbow yarn pegboard, seating area, and adjoining digital fabrication lab."
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                  >
+                </picture>
+              </figure>
+            </div>
+            <div class="lodestar-col-copy">
+              <h2>A Makerspace for Makers of All Kinds</h2>
+              <p>
+                Whether you’re into woodworking, metalworking, or high-precision machining, we’ve got the tools, space, and equipment to help your projects come together. All of our members have 24/7 access to our workshop.
+              </p>
+              <p class="panel-links">
+                <a class="panel-link" href="https://tcmaker.org/workshop/">Learn More About Our Shop</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Existing Lodestar Footer Structure -->
+  <footer id="colophon" class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h2>Membership</h2>
+        <ul>
+          <li><a href="https://tcmaker.org/membership/">Become a Member</a></li>
+          <li><a href="https://tcmaker.org/membership/membership-faq/">Membership FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Our Location</h2>
+        <address>
+          3119 E. 26th Street<br>
+          Minneapolis, MN 55406-1884
+        </address>
+        <p><a href="https://tcmaker.org/contact/">Contact Us</a></p>
+        <p><a href="https://tcmaker.org/privacy-policy/">Privacy Policy</a></p>
+      </div>
+      <div>
+        <h2>Follow Us!</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/TwinCitiesMaker">Facebook</a></li>
+          <li><a href="https://discord.com">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap site-info">
+      <p>Copyright &copy; 2009–2025 Twin Cities Maker &bull; <em>Layer 0, Item 1 Preview (Existing Lodestar Theme + New Photos, H1, Alt Text &amp; Meta Tags)</em></p>
+    </div>
+  </footer>
+</body>
+</html>
