@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Twin Cities Maker | Inclusive Minneapolis Makerspace &amp; Community Workshop</title>
+  <meta name="description" content="Twin Cities Maker (TC Maker) is a non-profit, volunteer-run community makerspace in Minneapolis’s Seward neighborhood. Explore 24/7 shared studios in fiber arts, ceramics, stained glass, woodworking, metal, laser cutting, and electronics—or tour a free Wednesday Open House.">
+  <meta name="robots" content="max-image-preview:large">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Twin Cities Maker">
+  <meta property="og:title" content="Twin Cities Maker | Minneapolis Community Makerspace">
+  <meta property="og:description" content="A welcoming, 24/7 volunteer-driven workshop in Seward, Minneapolis for artists, crafters, engineers, and curious beginners. Visit our Wednesday Open House (7–9 PM).">
+  <meta property="og:url" content="https://tcmaker.org/">
+  <meta property="og:image" content="https://tcmaker.org/assets/community-garden-1200w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="912">
+  <meta property="og:image:alt" content="Twin Cities Maker members smiling together outdoors while building raised cedar community garden beds.">
+
+  <!-- Typography: warm geometric display + accessible body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- LocalBusiness + Organization JSON-LD for strong branded & local Minneapolis SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "CivicStructure"],
+          "@id": "https://tcmaker.org/#organization",
+          "name": "Twin Cities Maker",
+          "alternateName": "TC Maker",
+          "url": "https://tcmaker.org/",
+          "logo": "https://tcmaker.org/assets/tcm-logomark.png",
+          "image": "https://tcmaker.org/assets/community-garden-1200w.jpg",
+          "description": "Twin Cities Maker is a 501(c)(3) non-profit, volunteer-driven community makerspace and shared workshop in Minneapolis offering 24/7 member access to wood, metal, ceramics, textiles, stained glass, laser, 3D printing, and electronics studios.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3119 E. 26th Street",
+            "addressLocality": "Minneapolis",
+            "addressRegion": "MN",
+            "postalCode": "55406",
+            "addressCountry": "US"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Wednesday",
+              "opens": "19:00",
+              "closes": "21:00",
+              "description": "Public Open House & Guided Tours"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/TwinCitiesMaker",
+            "https://discord.com"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://tcmaker.org/#website",
+          "url": "https://tcmaker.org/",
+          "name": "Twin Cities Maker",
+          "publisher": { "@id": "https://tcmaker.org/#organization" },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+  </script>
+
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a href="#main-heading" class="skip-link visually-hidden">Skip to main content</a>
+
+  <!-- Non-blocking, dismissible-by-scroll inline campaign strip -->
+  <div class="campaign-strip">
+    <div class="container campaign-inner">
+      <p>
+        <span class="campaign-badge">Building Campaign</span>
+        Help Twin Cities Maker purchase our future expanded home at the 7 Sigma building (2843 26th Ave S).
+        <a href="https://tcmaker.org/help-us-buy-a-building/">Learn about the campaign</a>
+      </p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-logo" href="index.html">
+        <img
+          src="assets/tcm-logomark.png"
+          alt=""
+          width="36"
+          height="36"
+        >
+        <span class="site-logo-text">Twin Cities Maker</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <button
+          class="menu-button"
+          type="button"
+          popovertarget="site-menu"
+          popovertargetaction="toggle"
+          aria-controls="site-menu"
+        >
+          <svg class="menu-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <span>Menu</span>
+        </button>
+
+        <ul id="site-menu" class="site-menu" popover="auto">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li class="nav-dropdown">
+            <button
+              class="dropdown-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="workshops-menu"
+              popovertarget="workshops-menu"
+            >
+              <span>Studios</span>
+              <svg class="chevron-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul id="workshops-menu" class="dropdown-list">
+              <li><a href="https://tcmaker.org/workshop/artifactory/">Artifactory &amp; Textiles</a></li>
+              <li><a href="https://tcmaker.org/workshop/3d-lab/">3D Lab &amp; Laser Shop</a></li>
+              <li><a href="https://tcmaker.org/workshop/wood-shop/">Wood Shop</a></li>
+              <li><a href="https://tcmaker.org/workshop/metal-shop/">Metal, Welding &amp; Forge</a></li>
+              <li><a href="https://tcmaker.org/workshop/electronics/">Electronics &amp; CNC</a></li>
+              <li><a href="https://tcmaker.org/workshop/">All 9 Studio Areas</a></li>
+            </ul>
+          </li>
+          <li><a href="https://tcmaker.org/classes/">Classes &amp; Events</a></li>
+          <li><a href="https://tcmaker.org/membership/">Membership</a></li>
+          <li><a href="https://tcmaker.org/about/">About</a></li>
+          <li><a class="nav-cta" href="https://tcmaker.org/donate-online/">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Seward Neighborhood • Minneapolis, MN</p>
+          <h1 id="main-heading" tabindex="-1">Make anything, together, at Twin Cities Maker.</h1>
+          <p class="lead">
+            A welcoming, volunteer-run community makerspace where artists, crafters, engineers, and first-time builders share 24/7 studios—from sewing, stained glass, and ceramics to woodworking, laser cutting, and metal.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://tcmaker.org/membership/">Tour a Wednesday Open House</a>
+            <a class="btn btn-secondary" href="#studios">Explore Our Studios</a>
+          </div>
+          <ul class="hero-highlights" role="list">
+            <li>
+              <strong>Wednesdays, 7–9 PM</strong>
+              <span>Free drop-in tours &amp; community night</span>
+            </li>
+            <li>
+              <strong>$85/mo or Sliding Scale</strong>
+              <span>Member-Supported &amp; +$25 partner tiers</span>
+            </li>
+            <li>
+              <strong>9 Shared Studios</strong>
+              <span>24/7 access after orientation</span>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="hero-media">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="assets/community-garden-640w.webp 640w, assets/community-garden-1200w.webp 1200w"
+              sizes="(max-width: 900px) 100vw, 52vw"
+            >
+            <img
+              src="assets/community-garden-1200w.jpg"
+              alt="Nine smiling Twin Cities Maker members outdoors in bright sunlight building wooden raised beds for a community garden project, with a maker sitting happily inside the finished frame."
+              width="1200"
+              height="912"
+              fetchpriority="high"
+              loading="eager"
+            >
+          </picture>
+          <figcaption>Members teaming up on an outdoor cedar raised-bed build for our Seward neighbors.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- LOUNGE & INCLUSIVE SPACE SPOTLIGHT -->
+    <section class="lounge-section">
+      <div class="container lounge-grid">
+        <figure class="lounge-media">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="assets/tcm-lounge-640w.webp 640w, assets/tcm-lounge-1200w.webp 1200w"
+              sizes="(max-width: 900px) 100vw, 48vw"
+            >
+            <img
+              src="assets/tcm-lounge-1200w.jpg"
+              alt="Sunlit Twin Cities Maker lounge featuring a warm golden-ochre wall with a rainbow-sorted pegboard of colorful yarn balls, cozy seating, and a filament recycling bin in the adjoining digital lab."
+              width="1200"
+              height="800"
+              loading="lazy"
+            >
+          </picture>
+        </figure>
+
+        <div class="lounge-copy">
+          <p class="eyebrow">A Space Built for Every Kind of Maker</p>
+          <h2>More than a woodshop—a creative third place.</h2>
+          <p>
+            Whether you’re mending a coat in the Soft Room, winding rainbow yarn in the sunlit lounge, throwing pottery, learning stained glass, or milling aluminum, you’ll find friendly mentors ready to help you get started safely.
+          </p>
+          <ul class="pillar-list" role="list">
+            <li>
+              <span class="pillar-dot pillar-teal" aria-hidden="true"></span>
+              <div>
+                <strong>Beginner-friendly checkouts</strong>
+                <p>No prior experience required—attend a Wednesday tour and sign up for hands-on safety trainings.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pillar-dot pillar-amber" aria-hidden="true"></span>
+              <div>
+                <strong>Zero-barrier pricing options</strong>
+                <p>Need-based <em>Member-Supported</em> dues and a <em>+$25/mo +1 option</em> let you create alongside someone you care about.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pillar-dot pillar-terracotta" aria-hidden="true"></span>
+              <div>
+                <strong>Accountable, member-led culture</strong>
+                <p>Guided by our Code of Conduct, elected volunteer leadership, and transparent community feedback channels.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIOS & CRAFT DISCIPLINES -->
+    <section id="studios" class="studios-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">9 Shared Studios Under One Roof</p>
+            <h2>What will you make next?</h2>
+          </div>
+          <a class="section-link" href="https://tcmaker.org/workshop/">View full studio directory &amp; floor plan</a>
+        </div>
+
+        <ul class="studio-grid" role="list">
+          <li class="studio-card studio-accent-amber">
+            <h3>Artifactory &amp; Soft Room</h3>
+            <p>Industrial &amp; domestic sewing machines, leatherworking, screen printing, stained glass, jewelry, lapidary, and picture framing.</p>
+            <a href="https://tcmaker.org/workshop/artifactory/">Explore Artifactory</a>
+          </li>
+          <li class="studio-card studio-accent-teal">
+            <h3>3D Lab &amp; Laser Cutting</h3>
+            <p>Precision laser cutters for wood, acrylic, leather, and fabric alongside multi-material 3D printers and filament recycling.</p>
+            <a href="https://tcmaker.org/workshop/3d-lab/">Explore 3D &amp; Laser</a>
+          </li>
+          <li class="studio-card studio-accent-terracotta">
+            <h3>Woodworking &amp; CNC</h3>
+            <p>Cabinet-grade saws, planers, jointers, routers, lathes, and large-format CNC routing for furniture and custom builds.</p>
+            <a href="https://tcmaker.org/workshop/wood-shop/">Explore Wood &amp; CNC</a>
+          </li>
+          <li class="studio-card studio-accent-teal">
+            <h3>Metal, Welding &amp; Forge</h3>
+            <p>MIG/TIG welding booths, plasma cutting, sheet-metal fabrication, and blacksmithing forges.</p>
+            <a href="https://tcmaker.org/workshop/metal-shop/">Explore Metal &amp; Forge</a>
+          </li>
+          <li class="studio-card studio-accent-amber">
+            <h3>Electronics &amp; Machine Shop</h3>
+            <p>Oscilloscopes, soldering rework stations, manual &amp; CNC mills, metal lathes, and precision metrology.</p>
+            <a href="https://tcmaker.org/workshop/electronics/">Explore Electronics &amp; Machining</a>
+          </li>
+          <li class="studio-card studio-accent-terracotta">
+            <h3>Classes, Open Circuits &amp; Events</h3>
+            <p>Public workshops in welding, woodworking, bookmaking, and fiber crafts—open to non-members and members alike.</p>
+            <a href="https://tcmaker.org/classes/">Browse upcoming classes</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HOW TO JOIN (3 CLEAR STEPS) -->
+    <section class="join-section">
+      <div class="container">
+        <div class="section-header centered">
+          <p class="eyebrow">Simple Path to Joining</p>
+          <h2>From first visit to 24/7 studio key fob in 3 steps</h2>
+        </div>
+
+        <ol class="steps-grid">
+          <li class="step-card">
+            <span class="step-num" aria-hidden="true">01</span>
+            <h3>Visit an Open House</h3>
+            <p>Stop by <strong>3119 E. 26th St</strong> any Wednesday between <strong>7:00–9:00 PM</strong> for a guided tour and meet volunteer makers.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-num" aria-hidden="true">02</span>
+            <h3>Complete Waiver &amp; Orientation</h3>
+            <p>Sign our community registration &amp; waiver, then attend a friendly New Member Orientation to pick up your key fob.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-num" aria-hidden="true">03</span>
+            <h3>Take Safety Checkouts &amp; Create</h3>
+            <p>Join studio safety trainings, pitch in with community upkeep, and build whenever inspiration strikes—day or night.</p>
+          </li>
+        </ol>
+
+        <div class="join-cta-bar">
+          <div>
+            <h3>Questions about sliding-scale dues or +1 memberships?</h3>
+            <p>Standard memberships are $85/month (or $460 for 6 months), with Member-Supported rates available for anyone experiencing financial need.</p>
+          </div>
+          <a class="btn btn-primary" href="https://tcmaker.org/membership/">Start Your Membership</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESSIBLE FAQ ACCORDION (Native <details name="faq">) -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="container faq-layout">
+        <div class="faq-intro">
+          <p class="eyebrow">Good to Know</p>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <p>New to shared workshops? Here’s what to expect on your first visit to Twin Cities Maker.</p>
+        </div>
+
+        <div class="faq-list">
+          <details name="faq" open>
+            <summary>Do I need experience before visiting or joining?</summary>
+            <div class="faq-body">
+              <p>Not at all! Many members arrive with zero shop experience. Our Wednesday Open House tours, public classes, and hands-on studio checkouts are designed to help beginners build confidence safely.</p>
+            </div>
+          </details>
+
+          <details name="faq">
+            <summary>Can I sign up just to rent a tool for one afternoon?</summary>
+            <div class="faq-body">
+              <p>We’re a volunteer-run educational nonprofit rather than an on-demand rental shop, so members attend an orientation and safety checkouts before using equipment—which keeps everyone safe and our tools running smoothly.</p>
+            </div>
+          </details>
+
+          <details name="faq">
+            <summary>Can non-members take classes at Twin Cities Maker?</summary>
+            <div class="faq-body">
+              <p>Yes! Most classes—from introductory welding and woodworking to stained glass and bookmaking—are open to the general public as well as members.</p>
+            </div>
+          </details>
+
+          <details name="faq">
+            <summary>How do Member-Supported and +1 memberships work?</summary>
+            <div class="faq-body">
+              <p>Anyone who needs financial flexibility can request Member-Supported discounted dues—no student or senior ID required. Full members can also add a +1 partner, friend, or family member for $25/month to create together.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="assets/tcm-logomark.png" alt="" width="32" height="32" loading="lazy">
+          <strong>Twin Cities Maker</strong>
+        </div>
+        <p>501(c)(3) Non-Profit Community Workshop (EIN 27-1536940)</p>
+        <address>
+          3119 E. 26th Street<br>
+          Minneapolis, MN 55406<br>
+          Open House: Wednesdays, 7:00–9:00 PM
+        </address>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <div>
+          <h3>Visit &amp; Join</h3>
+          <ul>
+            <li><a href="https://tcmaker.org/membership/">Become a Member</a></li>
+            <li><a href="https://tcmaker.org/classes/">Classes</a></li>
+            <li><a href="https://tcmaker.org/calendar/">Calendar</a></li>
+            <li><a href="https://tcmaker.org/twin-cities-makerfest/">Twin Cities Maker Fest</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Community</h3>
+          <ul>
+            <li><a href="https://tcmaker.org/about/">About &amp; Mission</a></li>
+            <li><a href="https://tcmaker.org/leadership/">Volunteer Leadership</a></li>
+            <li><a href="https://tcmaker.org/help-us-buy-a-building/">7 Sigma Building Fund</a></li>
+            <li><a href="https://tcmaker.org/report-an-incident/">Report an Incident</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Member Links</h3>
+          <ul>
+            <li><a href="https://wa.tcmaker.org/">Member Login</a></li>
+            <li><a href="https://wiki.tcmaker.org/">Community Wiki</a></li>
+            <li><a href="https://tcmaker.org/contact/">Contact Us</a></li>
+            <li><a href="https://tcmaker.org/privacy-policy/">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>Copyright &copy; 2009–2026 Twin Cities Maker. Teach. Make. Share.</p>
+      <p>Sample modern homepage prototype &bull; WCAG AA/AAA &amp; local SEO ready.</p>
+    </div>
+  </footer>
+</body>
+</html>
