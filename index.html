@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Twin Cities Maker — Website &amp; Brand Refresh Demos</title>
+  <meta name="description" content="Side-by-side comparison demos for Twin Cities Maker (tcmaker.org): current site, Layer 0 image swap, editorial photo upgrade, and full modern brand refresh.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg-canvas-light: #faf8f5;
+      --bg-surface-light: #ffffff;
+      --bg-tint-light: #edf7f5;
+      --text-primary-light: #183135;
+      --text-muted-light: #455e63;
+      --brand-teal-light: #016e61;
+      --brand-terracotta-light: #b84514;
+      --brand-amber-light: #f3b73f;
+      --border-light: #d6e0de;
+
+      --bg-canvas-dark: #122023;
+      --bg-surface-dark: #1a2d31;
+      --bg-tint-dark: #16292c;
+      --text-primary-dark: #f2f5f4;
+      --text-muted-dark: #b7c9cb;
+      --brand-teal-dark: #4fd1be;
+      --brand-terracotta-dark: #ff9868;
+      --brand-amber-dark: #f5c358;
+      --border-dark: #2c474c;
+
+      --bg-canvas: var(--bg-canvas-light);
+      --bg-surface: var(--bg-surface-light);
+      --bg-tint: var(--bg-tint-light);
+      --text-primary: var(--text-primary-light);
+      --text-muted: var(--text-muted-light);
+      --brand-teal: var(--brand-teal-light);
+      --brand-terracotta: var(--brand-terracotta-light);
+      --brand-amber: var(--brand-amber-light);
+      --border: var(--border-light);
+      --text-on-primary: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-canvas: var(--bg-canvas-dark);
+        --bg-surface: var(--bg-surface-dark);
+        --bg-tint: var(--bg-tint-dark);
+        --text-primary: var(--text-primary-dark);
+        --text-muted: var(--text-muted-dark);
+        --brand-teal: var(--brand-teal-dark);
+        --brand-terracotta: var(--brand-terracotta-dark);
+        --brand-amber: var(--brand-amber-dark);
+        --border: var(--border-dark);
+        --text-on-primary: #122023;
+      }
+    }
+
+    @supports (color: light-dark(white, black)) {
+      :root {
+        --bg-canvas: light-dark(var(--bg-canvas-light), var(--bg-canvas-dark));
+        --bg-surface: light-dark(var(--bg-surface-light), var(--bg-surface-dark));
+        --bg-tint: light-dark(var(--bg-tint-light), var(--bg-tint-dark));
+        --text-primary: light-dark(var(--text-primary-light), var(--text-primary-dark));
+        --text-muted: light-dark(var(--text-muted-light), var(--text-muted-dark));
+        --brand-teal: light-dark(var(--brand-teal-light), var(--brand-teal-dark));
+        --brand-terracotta: light-dark(var(--brand-terracotta-light), var(--brand-terracotta-dark));
+        --brand-amber: light-dark(var(--brand-amber-light), var(--brand-amber-dark));
+        --border: light-dark(var(--border-light), var(--border-dark));
+        --text-on-primary: light-dark(#ffffff, #122023);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background-color: var(--bg-canvas);
+    }
+
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    .skip-link:focus-visible {
+      position: fixed;
+      inset-block-start: 0.75rem;
+      inset-inline-start: 0.75rem;
+      z-index: 1000;
+      padding: 0.75rem 1rem;
+      background-color: var(--brand-teal);
+      color: var(--text-on-primary);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 0.5rem;
+    }
+
+    :where(a:any-link):focus-visible {
+      outline: 3px solid var(--brand-terracotta);
+      outline-offset: 3px;
+      border-radius: 0.25rem;
+    }
+
+    .container {
+      inline-size: min(100% - 2rem, 70rem);
+      margin-inline: auto;
+    }
+
+    header {
+      background-color: var(--bg-surface);
+      border-block-end: 1px solid var(--border);
+      padding-block: 1.1rem;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+
+    main {
+      padding-block: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    h1, h2 {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: clamp(1.85rem, 1.3rem + 2vw, 2.75rem);
+      line-height: 1.15;
+    }
+
+    .lead {
+      margin-block: 0.85rem 2rem;
+      max-inline-size: 62ch;
+      color: var(--text-muted);
+      text-wrap: pretty;
+    }
+
+    .stage-grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+      gap: 1.25rem;
+    }
+
+    .stage-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1.35rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-block-start: 4px solid var(--brand-teal);
+      border-radius: 1rem;
+    }
+
+    .stage-card.is-c { border-block-start-color: var(--brand-amber); }
+    .stage-card.is-d { border-block-start-color: var(--brand-terracotta); }
+
+    .badge {
+      align-self: flex-start;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      background-color: var(--bg-tint);
+      color: var(--brand-teal);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .stage-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    .btn {
+      margin-block-start: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-block-size: 2.75rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      background-color: var(--brand-teal);
+      color: var(--text-on-primary);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      align-self: flex-start;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--brand-teal);
+      border: 2px solid var(--brand-teal);
+    }
+
+    .docs-box {
+      margin-block-start: 2.25rem;
+      padding: 1.5rem;
+      background-color: var(--bg-tint);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .docs-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    footer {
+      padding-block: 1.5rem 2.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (forced-colors: active) {
+      .stage-card, .docs-box { border: 1px solid CanvasText; }
+      .btn { border: 2px solid ButtonText; background: ButtonFace; color: ButtonText; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-heading" class="skip-link visually-hidden">Skip to content</a>
+
+  <header>
+    <div class="container header-row">
+      <img src="sample-home/assets/tcm-logomark.png" alt="" width="34" height="34">
+      <span>Twin Cities Maker — Brand &amp; Website Refresh</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 id="main-heading" tabindex="-1">Four-Stage Visual &amp; UX Progression</h1>
+      <p class="lead">
+        Compare where Twin Cities Maker is today against three incremental steps: dropping existing community photos into the current WordPress theme, upgrading those same scenes with editorial photo polish, and moving to a warm, WCAG-accessible brand refresh.
+      </p>
+
+      <ul class="stage-grid" role="list">
+        <li class="stage-card">
+          <span class="badge">Stage A &bull; Current Live Site</span>
+          <h2>Where We Are Today</h2>
+          <p>Live <code>tcmaker.org</code> running the 2016 Lodestar theme with an empty shop hero, clamped-wood photo, no homepage <code>&lt;h1&gt;</code>, and 16 nav links.</p>
+          <a class="btn btn-outline" href="https://tcmaker.org/">View Live tcmaker.org</a>
+        </li>
+
+        <li class="stage-card">
+          <span class="badge">Stage B &bull; Layer 0 Quick Swap</span>
+          <h2>Existing Photos, 1:1 Layout</h2>
+          <p>Exact 1:1 Lodestar homepage structure swapping only the dusty shop &amp; clamp photos for your existing garden build and yarn-wall lounge photos, plus SEO fixes.</p>
+          <a class="btn" href="layer0-image-swap/">Open Stage B Demo</a>
+        </li>
+
+        <li class="stage-card is-c">
+          <span class="badge">Stage C &bull; Editorial Photo Polish</span>
+          <h2>Care &amp; Attention to Photography</h2>
+          <p>Same 1:1 Lodestar layout with DSLR-grade lighting, dynamic range, and staged lounge seating—keeping every person, alley detail, and yarn ball authentic.</p>
+          <a class="btn" href="layer0-pro-photo/">Open Stage C Demo</a>
+        </li>
+
+        <li class="stage-card is-d">
+          <span class="badge">Stage D &bull; Full Refresh</span>
+          <h2>Modern Brand, UX &amp; Local SEO</h2>
+          <p>Warm daylight studio palette, WCAG AA/AAA contrast, light/dark mode, streamlined navigation, all 9 studio paths, and <code>LocalBusiness</code> schema.</p>
+          <a class="btn" href="sample-home/">Open Stage D Demo</a>
+        </li>
+      </ul>
+
+      <section class="docs-box" aria-labelledby="docs-heading">
+        <div>
+          <h2 id="docs-heading">Brand Guide &amp; Strategy Report</h2>
+          <p>Download the 3-page 2026 color/typography PDF guide or read the complete UX, inclusivity, and search-engine audit.</p>
+        </div>
+        <div class="docs-actions">
+          <a class="btn" href="Twin-Cities-Maker-Brand-Guide-2026.pdf">2026 Brand Guide (PDF)</a>
+          <a class="btn btn-outline" href="https://github.com/nanobrad/tcmaker-refresh/blob/main/rebrand-and-seo-report.md">Audit &amp; SEO Report</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Prepared for Twin Cities Maker &bull; Minneapolis, MN</p>
+    </div>
+  </footer>
+</body>
+</html>
